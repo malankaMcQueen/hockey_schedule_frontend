@@ -179,19 +179,6 @@ export function GetAllTeams(){
         });
     };
 
-    const showMatchList = (team) => {
-        return(
-            <div>
-                {team.matchDTOWithArenaList.map(match=>(
-            <Paper elevation={6} style={{ margin: "10px", padding: "15px", textAlign: "left" }} key={match.id}>
-                <p><b>Id:</b> {match.id}</p>
-                <p><b>Date and Time:</b> { match.dateTime ? moment(match.dateTime).format('DD-MM-YYYY HH:mm') : "undefined"}</p>
-            </Paper>
-            ))}
-           </div>
-        )
-    }
-
     React.useEffect(() => {
         refreshListTeams();
     }, []);
@@ -203,7 +190,6 @@ export function GetAllTeams(){
         <Paper elevation={6} style={{margin:"10px", padding:"15px", textAlign:"left"}} key={team.id}>
             Id:{team.id}<br/>
             Team name:{team.teamName}<br/>
-            {/* Match: {team.matchDTOWithArenaList && team.matchDTOWithArenaList.length > 0 ? showMatchList(team) : "undefined"}<br/> */}
         </Paper>
       ))}
       <Button variant="outlined" color="primary" style={{margin:"20px"}} onClick={refreshListTeams}>

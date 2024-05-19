@@ -24,10 +24,6 @@ export function BasicDatePicker({ onDateChange }) {
   // Принимаем onTimeChange в качестве пропа
   export function BasicTimePicker({ onTimeChange }) {
     const handleChange = (time) => {
-        const newTime = {
-            hours: time.hour(),
-            minutes: time.minute()
-        };
       onTimeChange(time); // Передаем выбранное время обратно в родительский компонент
     };
   
